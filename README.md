@@ -26,18 +26,35 @@
 
 ## 使用方法
 
-1. 将脚本保存为 `fastMake.sh`，并赋予可执行权限：
+1. 将脚本保存为 `build_and_run.sh`，并赋予可执行权限：
 
    ```bash
-   chmod +x fastMake.sh
+   chmod +x build_and_run.sh
    ```
 
-2. 确保脚本所在目录包含 `CMakeLists.txt`。
+2. 确保脚本所在目录包含 `CMakeLists.txt` 文件，并参考如下格式：
+
+   ```cmake
+   cmake_minimum_required(VERSION 3.10)
+   project(App)
+
+   set(SRC
+       ${CMAKE_SOURCE_DIR}/src/main.cpp
+   )
+
+   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output)
+   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG   ${CMAKE_SOURCE_DIR}/output/Debug)
+   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/output/Release)
+
+   include_directories(include)
+
+   add_executable(App ${SRC})
+   ```
 
 3. 在终端中运行脚本：
 
    ```bash
-   ./fastMake.sh
+   ./build_and_run.sh
    ```
 
 4. 按提示输入要构建的版本编号：
@@ -69,7 +86,7 @@
 
 ```bash
 $ ./build_and_run.sh
-项目名称：MyApp
+项目名称：App
 需要make什么版本？(输入编号)
 1. Release
 2. Debug

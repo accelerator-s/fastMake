@@ -26,10 +26,10 @@
 
 ## 使用方法
 
-1. 将脚本保存为 `build_and_run.sh`，并赋予可执行权限：
+1. 将脚本保存为 `fastMake.sh`，并赋予可执行权限：
 
    ```bash
-   chmod +x build_and_run.sh
+   chmod +x fastMake.sh
    ```
 
 2. 确保脚本所在目录包含 `CMakeLists.txt`。
@@ -37,7 +37,7 @@
 3. 在终端中运行脚本：
 
    ```bash
-   ./build_and_run.sh
+   ./fastMake.sh
    ```
 
 4. 按提示输入要构建的版本编号：

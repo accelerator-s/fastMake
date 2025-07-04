@@ -50,7 +50,8 @@
 
    add_executable(App ${SRC})
    ```
-
+>[!WARNING]
+>`add_exectuable()` 必须写成一行。
 3. 在终端中运行脚本：
 
    ```bash
@@ -64,7 +65,7 @@
 
 5. 脚本将自动执行以下步骤：
 
-   * 创建 `build` 目录（如果不存在）
+   * 删除 `build`目录并重新创建，或者创建 `build` 目录（如果不存在）
    * 进入 `build` 目录并执行 `make clean`
    * 调用 `cmake -DCMAKE_BUILD_TYPE=<Release|Debug> ..`
    * 执行 `make` 编译项目

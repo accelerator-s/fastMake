@@ -26,10 +26,10 @@
 
 ## 使用方法
 
-1. 将脚本保存为 `build_and_run.sh`，并赋予可执行权限：
+1. 将脚本保存为 `fastMake.sh`，并赋予可执行权限：
 
    ```bash
-   chmod +x build_and_run.sh
+   chmod +x fastMake.sh
    ```
 
 2. 确保脚本所在目录包含 `CMakeLists.txt` 文件，并参考如下格式：
@@ -50,12 +50,14 @@
 
    add_executable(App ${SRC})
    ```
+   
 >[!WARNING]
 >`add_exectuable()` 必须写成一行。
+
 3. 在终端中运行脚本：
 
    ```bash
-   ./build_and_run.sh
+   ./fastMake.sh
    ```
 
 4. 按提示输入要构建的版本编号：
@@ -86,7 +88,7 @@
 ## 示例
 
 ```bash
-$ ./build_and_run.sh
+$ ./fastMake.sh
 项目名称：App
 需要make什么版本？(输入编号)
 1. Release
@@ -109,4 +111,3 @@ Hello, World!
 
 * 脚本默认查找当前目录下的 `CMakeLists.txt`，如需指定其他路径，可在脚本开头修改 `cmake_file` 变量。
 * 输出可执行文件需位于 `output/Release` 或 `output/Debug` 目录，脚本会自动进入并执行该目录下与项目名称同名的文件。
-* 如果项目的 `add_executable` 写法比较特殊，提取目标名的正则需做相应调整。
